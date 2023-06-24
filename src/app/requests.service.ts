@@ -139,10 +139,7 @@ export class RequestsService {
   }
 
   private getNextCatId(cats: Category[]): number {
-    console.log("getting next cat id");
     const maxId = cats.reduce((max, cat) => (cat.id > max ? cat.id : max), 0);
-
-    console.log(maxId +1);
     return maxId + 1;
   }
 }
