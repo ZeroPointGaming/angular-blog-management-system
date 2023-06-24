@@ -1,0 +1,14 @@
+<div class="categories-container">
+  <h1 class="mat-h1">Categories</h1>
+  <ul>
+    <li *ngFor="let category of categories">
+      {{ category.name }}
+      <button mat-icon-button [routerLink]="['/updateCategory', category.id]" color="primary" aria-label="Edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button [routerLink]="['/deleteCategory', category.id]" color="warn" aria-label="Delete">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>

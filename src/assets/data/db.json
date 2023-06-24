@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Welcome"
+    },
+    {
+      "id": 2,
+      "name": "Science"
+    },
+    {
+      "id": 3,
+      "name": "Travel"
+    },
+    {
+      "id": 4,
+      "name": "Fashion"
+    },
+    {
+      "id": 5,
+      "name": "Food"
+    },
+    {
+      "id": 6,
+      "name": "Art and Creativity"
+    },
+    {
+      "id": 7,
+      "name": "Tech"
+    }
+  ],
+  "posts": [
+    {
+      "title": "This was my first blog post",
+      "author": "Zero",
+      "summary": "This is some ultra dank summary for my very first blog post.",
+      "content": "Welcome to my blog! In this first post, I'll be sharing my thoughts and experiences on starting a new journey as a blogger. Stay tuned for exciting content and engaging discussions!",
+      "category": "Welcome",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "This was my second blog post",
+      "summary": "This is some ultra dank summary for my second blog post.",
+      "content": "In my second blog post, I dive into the world of technology and explore the latest trends and innovations. Join me as we explore fascinating topics like artificial intelligence, blockchain, and much more!",
+      "author": "Zero",
+      "category": "Science"
+    },
+    {
+      "id": 3,
+      "title": "This was my third blog post",
+      "summary": "This is some ultra dank summary for my third blog post.",
+      "content": "In this post, I share my top travel destinations and experiences from around the globe. From serene beaches to breathtaking mountains, get ready to embark on a virtual journey and discover new horizons with me!",
+      "author": "Zero",
+      "category": "Travel"
+    },
+    {
+      "id": 4,
+      "title": "This was my fourth blog post",
+      "summary": "This is some ultra dank summary for my fourth blog post.",
+      "content": "Curious about the latest fashion trends? Look no further! In my fourth blog post, I explore the world of fashion and share style tips, outfit ideas, and updates from the runway. Get ready to upgrade your fashion game!",
+      "author": "Zero",
+      "category": "Fashion"
+    },
+    {
+      "id": 5,
+      "title": "This was my fifth blog post",
+      "summary": "This is some ultra dank summary for my fifth blog post.",
+      "content": "Calling all food enthusiasts! Join me on a culinary adventure in my fifth blog post, where I'll be sharing delicious recipes, restaurant reviews, and insider tips from the world of gastronomy. Prepare to tantalize your taste buds!",
+      "author": "Zero",
+      "category": "Food"
+    },
+    {
+      "id": 6,
+      "title": "Exploring the World of Photography",
+      "summary": "In this blog post, I delve into the art of photography and share tips, techniques, and breathtaking visuals captured through my lens.",
+      "content": "Photography is a powerful medium that allows us to capture moments, express emotions, and tell stories. In this blog post, I'll be exploring the fascinating world of photography. Join me as we delve into various genres like landscape, portrait, street, and wildlife photography. I'll also be sharing valuable tips, techniques, and behind-the-scenes insights to help you improve your photography skills. Get ready to embark on a visual journey!",
+      "author": "Zero",
+      "category": "Art and Creativity"
+    }
+  ]
+}
