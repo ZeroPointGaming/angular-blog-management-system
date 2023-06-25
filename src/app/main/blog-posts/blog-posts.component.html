@@ -1,0 +1,28 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let card of cards">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <div class="card-header-content">
+            <div class="card-title">{{ card.title }}</div>
+            <div class="card-actions">
+              <button mat-icon-button [routerLink]="['/updatePost', card.id]" color="primary" aria-label="Edit">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button [routerLink]="['/deletePost', card.id]" color="warn" aria-label="Delete">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>{{ card.content }}</div>
+        </mat-card-content>
+        <mat-card-footer class="card-footer">
+          <div class="card-author">Author: {{ card.author }}</div>
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
