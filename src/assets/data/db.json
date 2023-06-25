@@ -4,7 +4,7 @@
       "id": 1,
       "first_name": "John",
       "last_name": "Doe",
-      "email": "admin@example.com",
+      "email": "admins@example.com",
       "password": "",
       "salt": "",
       "group": 1,
