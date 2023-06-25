@@ -68,6 +68,10 @@ export class RequestsService {
     return this.http.get(`${this.api_url}users/${id}`);
   }
 
+  getUserByEmail(email: string) {
+    return this.http.get<User>(`${this.api_url}users?email=${email}`);
+  }
+
   getUserGroup(id: number) {
     return this.http.get(`${this.api_url}user_groups/${id}`);
   }

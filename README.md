@@ -1,3 +1,7 @@
+# Important Notes
+
+Do not use the included client side authentication system on a live production environment. It is inately a security vulnerability to evaluate passwords client side.
+
 # BlogManagementSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
