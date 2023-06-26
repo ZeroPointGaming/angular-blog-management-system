@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SHA256, lib } from 'crypto-js';
-import { RequestsService, User } from 'src/app/requests.service';
+import { RequestsService } from 'src/app/requests.service';
+import { User } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-update-user',

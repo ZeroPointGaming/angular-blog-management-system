@@ -1,7 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { RequestsService, User } from 'src/app/requests.service';
+import { RequestsService } from 'src/app/requests.service';
+import { User } from 'src/app/interfaces';
 import { SHA256, lib } from 'crypto-js';
 
 @Component({

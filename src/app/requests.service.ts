@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, switchMap } from 'rxjs';
+import { User, Category, UserGroup, Post, AuthToken } from 'src/app/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -75,6 +75,10 @@ export class RequestsService {
   getUserGroup(id: number) {
     return this.http.get(`${this.api_url}user_groups/${id}`);
   }
+
+  getUserAuthToken(id: number) {
+    return this.http.get<AuthToken>(`${this.api_url}auth_tokens?users_id=${id}`);
+  }
   //#endregion
 
   //#region "Post Functions"
@@ -118,6 +122,21 @@ export class RequestsService {
       },
       error: error => {
         this.handleError(error, 'added', 'group', false);
+      }}
+    );
+  }
+
+  addUserAuthToken(token: AuthToken) {
+    //Delete the users current authentication token so we dont have duplicates.
+    this.deleteAuthToken(token.users_id);
+
+    //Insert the users new authentication token into the auth token table.
+    this.http.post(`${this.api_url}auth_tokens`, token).subscribe({
+      next: response => {
+        this.handleResponse(response, "added", "Auth token", true, '/');
+      },
+      error: error => {
+        this.handleError(error, 'added', 'auth token', false);
       }}
     );
   }
@@ -213,45 +232,16 @@ export class RequestsService {
       }}
     );
   }
+
+  deleteAuthToken(id: number) : void {
+    this.http.delete(`${this.api_url}auth_tokens?users_id=${id}`).subscribe({
+      next: response => {
+        this.handleResponse(response, "deleted", "Auth token", true, '/');
+      },
+      error: error => {
+        this.handleError(error, 'deleting', 'auth token', false);
+      }}
+    );
+  }
   //#endregion
 }
-
-//#region "Object Interfaces"
-export interface Post {
-  id?: number; //Id of the post, set to optional because New posts wont have an ID until after they are entered into the database.
-  title: string; //Title of the post.
-  summary: string; //Summary of the post content.
-  content: string; //Main post content.
-  author: string; //Author of the post.
-  category: string; //Category of post.
-  created_on?: string; //Timestamp of creation date.
-  created_by?: number; //User id of the creator of the post.
-}
-
-export interface Category {
-  id?: number; //Id of the category, set to optional because New categories wont have an ID until after they are entered into the database.
-  name: string; //Name of the category.
-  created_on?: string; //Timestamp of creation date.
-  created_by?: number; //User id of the creator of the post.
-}
-
-export interface User {
-  id?: number //Id of the user, set to optional because New users wont have an ID until after they are entered into the database.
-  first_name: string; //First name of the user.
-  last_name: string; //Last name of th euser.
-  email: string; //Email of the user.
-  password?: string; //Password hash of the user.
-  salt?: string; //Hash salt for the users password.
-  group: number; //Users group id.
-  active: number; //Whether or not the user is in an active state.
-  created_on?: string; //Timestamp of creation date.
-  created_by?: number; //User id of the creator of the post.
-}
-
-export interface UserGroup {
-  id?: number; //Id of the user group, set to optional because New user groups wont have an ID until after they are entered into the database.
-  name: string; //Name of the users group.
-  created_on?: string; //Timestamp of creation date.
-  created_by?: number; //User id of the creator of the post.
-}
-//#endregion

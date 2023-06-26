@@ -2,7 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { RequestsService, UserGroup } from 'src/app/requests.service';
+import { RequestsService } from 'src/app/requests.service';
+import { UserGroup } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-update-group',

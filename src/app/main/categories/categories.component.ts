@@ -1,8 +1,9 @@
 import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
-import { RequestsService, Category } from '../../requests.service';
+import { RequestsService } from '../../requests.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { Category } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-categories',
